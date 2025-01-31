@@ -4,6 +4,7 @@ import SimpleLayout from "../layout/SimpleLayout";
 
 // 공통 사용 페이지
 import LoginPage from "../pages/common/LoginPage/LoginPage";
+import GuestHousePage from "../pages/common/GuestHousePage/GuestHousePage";
 import GuestHouseDetailPage from "../pages/common/GuestHouseDetailPage/GuestHouseDetailPage";
 import MainPage from "../pages/common/MainPage/MainPage";
 import SelectSignUpPage from "../pages/common/SignUpPage/SelectSignUpPage";
@@ -43,7 +44,8 @@ const router = createBrowserRouter([
         element: <StaffRecruitmentDetailPage />,
       },
       { path: "recruitment", element: <StaffRecruitmentPage /> },
-      { path: "guestHouse/:guestHouseId", element: <GuestHouseDetailPage /> },
+      { path: "guesthouse/:guestHouseId", element: <GuestHouseDetailPage /> },
+      { path: "guesthouse", element: <GuestHousePage /> },
 
       // 게스트하우스 회원 전용
       { path: "guesthouse/mypage", element: <GHGuestHouseMyPage /> },
