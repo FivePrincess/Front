@@ -12,7 +12,6 @@ export default function Layout() {
       <main className="flex-grow min-h-screen">
         <Outlet />
       </main>
-      <div className="bg-purple-main text-purple-main">rtt</div>
       <footer>
         <Footer />
       </footer>
