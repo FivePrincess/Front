@@ -1,7 +1,7 @@
-module.exports = {
+export default {
   content: [
-    "./src/**/*.{html,js,jsx,ts,tsx}", // Tailwind가 스캔할 파일 경로
-    "./index.html", // 루트 HTML 파일
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx,html}", // JS, TS, JSX, TSX 파일을 포함
   ],
   theme: {
     extend: {},
