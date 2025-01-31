@@ -5,12 +5,16 @@ import { Outlet } from "react-router-dom";
 
 export default function SimpleLayout() {
   return (
-    <div>
-      <SimpleHeader />
-
-      <Outlet />
-
-      <Footer />
+    <div className="flex flex-col min-h-screen">
+      <header>
+        <SimpleHeader />
+      </header>
+      <main className="flex-grow min-h-screen">
+        <Outlet />
+      </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
