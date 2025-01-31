@@ -5,7 +5,7 @@ export default function SimpleHeader() {
   const navigate = useNavigate();
   return (
     <div className="text-purple-main">
-      <div className="flex justify-between items-end px-32 py-2 ">
+      <div className="flex justify-between items-end px-32 py-4 ">
         {/** logo */}
         <div
           className="flex items-end hover:scale-105 transition-transform duration-300 cursor-pointer"
