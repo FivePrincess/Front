@@ -1,3 +1,19 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Helvetica", "Arial", "sans-serif";
+  --color-purple-dark: #4a20e1;
+  --color-purple-main: #7153dd;
+  --color-purple-medium: #b9abff;
+  --color-purple-light: #eae4ff;
+  --color-red: #ff5d5a;
+  --color-orange: #ff7f00;
+  --color-yellow-main: #ffc83a;
+  --color-yellow-light: #ffef5e;
+  --color-yellow-baby: #fffad6;
+  --color-black: #000000;
+  --color-gray-main: #747d8f;
+  --color-gray-stroke: #c8d1e2;
+  --color-gray-light: #f8f9fb;
+  --color-white: #ffffff;
+}
