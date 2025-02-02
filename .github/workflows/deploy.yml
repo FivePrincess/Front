@@ -1,0 +1,43 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Log in to Docker Hub
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      run: echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
+
+    - name: Build and push Docker image
+      run: |
+        docker buildx create --use
+        docker buildx build --platform linux/amd64 -t ${{ secrets.DOCKER_IMAGE_NAME }} --push .
+
+    - name: SSH into EC2 and deploy
+      uses: appleboy/ssh-action@v0.1.7
+      with: 
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USER }}
+        key: ${{ secrets.EC2_KEY }}
+        port: 22
+        script: |
+          if ! docker network inspect backend_network >/dev/null 2>&1; then
+            docker network create backend_network
+          fi
+
+          docker pull ${{ secrets.DOCKER_IMAGE_NAME }}
+          docker stop my-app || true
+          docker rm my-app || true
+
+          docker run -d --name my-app --network backend_network -p 80:80 ${{ secrets.DOCKER_IMAGE_NAME }}
+          
