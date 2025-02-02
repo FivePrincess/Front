@@ -39,5 +39,5 @@ jobs:
           docker stop my-app || true
           docker rm my-app || true
 
-          docker run -d --name my-app --network backend_network -p 80:80 ${{ secrets.DOCKER_IMAGE_NAME }}
+          docker run -d --name my-app --network backend_network -p 8080:80 ${{ secrets.DOCKER_IMAGE_NAME }}
           
