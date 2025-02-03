@@ -9,7 +9,7 @@ export default function Layout() {
       <header>
         <Header />
       </header>
-      <main className="flex-grow min-h-screen">
+      <main className="flex-grow min-h-screen px-32">
         <Outlet />
       </main>
       <footer>

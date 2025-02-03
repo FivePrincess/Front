@@ -14,7 +14,7 @@ export default function SimpleHeader() {
           }}
         >
           <img
-            src="../../public/img/logo.png"
+            src="/img/logo.png"
             alt="구집 로고 이미지"
             className="object-cover h-16"
           />
