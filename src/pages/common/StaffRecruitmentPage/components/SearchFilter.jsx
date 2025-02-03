@@ -4,19 +4,16 @@ import WhiteBtn from "../../../../components/WhiteBtn";
 import PurpleBtn from "../../../../components/PurpleBtn";
 import LocationFilter from "./LocationFilter";
 import DurationFilter from "./DurationFilter";
+import KakaoMap from "./KakaoMap";
 
 //공고 지역 필터
-export default function SearchFilter() {
+export default function SearchFilter({
+  selectedLocation,
+  setSelectedLocation,
+  selectedDuration,
+  setSelectedDuration,
+}) {
   const [selectedFilter, setSelectedFilter] = useState(""); //선택한 대분류
-  const [selectedLocation, setSelectedLocation] = useState([]); //선택한 지역
-  const [selectedDuration, setSelectedDuration] = useState([]); //선택한 근무 기간
-
-  useEffect(() => {
-    //필터링 조건 모니터링
-    console.log(selectedDuration);
-    console.log(selectedLocation);
-  }, [selectedDuration, selectedLocation]);
-
   const resetFilter = () => {
     //검색 조건 초기화
     setSelectedFilter("");

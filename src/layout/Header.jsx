@@ -81,7 +81,7 @@ export default function Header() {
             }}
           >
             <img
-              src="../../public/img/logo.png"
+              src="/img/logo.png"
               alt="구집 로고 이미지"
               className="object-cover h-16"
             />
