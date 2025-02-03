@@ -1,0 +1,106 @@
+.signupContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  padding: 1rem;
+  font-family: var(--font-sans);
+}
+
+.signupHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.signupHeader h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--color-black);
+}
+
+.signupHeader p {
+  color: var(--color-gray-main);
+}
+
+.signupCards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 64rem;
+}
+
+.signupCard {
+  flex: 1;
+}
+
+.cardContent {
+  border: 1px solid var(--color-gray-stroke);
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.iconContainer {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.cardContent h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--color-black);
+}
+
+.cardContent p {
+  color: var(--color-gray-main);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.signupButton {
+  width: 100%;
+  padding: 1rem 0;
+  border-radius: 0.75rem;
+  margin-top: auto;
+  transition: background-color 0.3s;
+}
+
+.signupButton.purple {
+  background-color: var(--color-purple-main);
+  color: var(--color-white);
+  font-weight: 650;
+  border: 2px solid var(--color-purple-dark);
+}
+
+.signupButton.purple:hover {
+  background-color: var(--color-purple-dark);
+}
+
+.signupButton.yellow {
+  background-color: var(--color-yellow-light);
+  color: var(--color-black);
+  font-weight: 650;
+  border: 2px solid var(--color-yellow-main);
+}
+
+.signupButton.yellow:hover {
+  background-color: var(--color-yellow-main);
+}
+
+@media (min-width: 768px) {
+  .signupCards {
+      flex-direction: row;
+  }
+}
