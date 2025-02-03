@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import FilterBtnWhite from "../../../../components/FilterBtnWhite";
+import WhiteBtn from "../../../../components/WhiteBtn";
+import PurpleBtn from "../../../../components/PurpleBtn";
 import LocationFilter from "./LocationFilter";
 import DurationFilter from "./DurationFilter";
 
@@ -15,10 +17,21 @@ export default function SearchFilter() {
     console.log(selectedLocation);
   }, [selectedDuration, selectedLocation]);
 
+  const resetFilter = () => {
+    //검색 조건 초기화
+    setSelectedFilter("");
+    setSelectedLocation([]);
+    setSelectedDuration([]);
+  };
+
+  const search = () => {
+    //검색 수행
+  };
+
   return (
     <div>
       <div className="flex-col">
-        <div className="text-2xl py-2">검색 조건</div>
+        <div className="text-2xl py-2 font-semibold">검색 조건</div>
         {/** 검색 조건 분류 */}
         <div className="flex gap-4 py-2">
           <FilterBtnWhite
@@ -48,6 +61,12 @@ export default function SearchFilter() {
           ) : (
             ""
           )}
+        </div>
+
+        {/** 초기화, 검색 */}
+        <div className="flex gap-4 justify-center py-2">
+          <WhiteBtn title={"초기화"} action={() => resetFilter()} />
+          <PurpleBtn title={"검색"} action={() => search} />
         </div>
       </div>
     </div>
