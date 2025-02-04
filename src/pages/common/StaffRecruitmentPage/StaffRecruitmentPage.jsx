@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import SearchFilter from "./components/SearchFilter";
 import RecruitmentList from "./components/RecruitmentList";
 import AfterSearchFilter from "./components/AfterSearchFilter";
-import Map from "../../../components/MapModal";
 
 //공고 목록
 export default function StaffRecruitmentPage() {
@@ -12,7 +11,7 @@ export default function StaffRecruitmentPage() {
   return (
     <div className="flex-col justify-center items-center">
       <div className="py-8">
-        {recruitmentList.length == [] ? (
+        {recruitmentList.length == 0 ? ( //검색 결과가 없는 경우
           <SearchFilter
             selectedLocation={selectedLocation}
             setSelectedLocation={setSelectedLocation}
@@ -20,16 +19,20 @@ export default function StaffRecruitmentPage() {
             setSelectedDuration={setSelectedDuration}
           />
         ) : (
-          <AfterSearchFilter
-            selectedLocation={selectedLocation}
-            setSelectedLocation={setSelectedLocation}
-            selectedDuration={selectedDuration}
-            setSelectedDuration={setSelectedDuration}
-          />
+          //검색 결과가 있는 경우
+          <div>
+            <AfterSearchFilter
+              setRecruitmentList={setRecruitmentList}
+              selectedLocation={selectedLocation}
+              setSelectedLocation={setSelectedLocation}
+              selectedDuration={selectedDuration}
+              setSelectedDuration={setSelectedDuration}
+            />
+            <div className="py-16">
+              <RecruitmentList recruitmentList={recruitmentList} />
+            </div>
+          </div>
         )}
-      </div>
-      <div>
-        <RecruitmentList />
       </div>
     </div>
   );

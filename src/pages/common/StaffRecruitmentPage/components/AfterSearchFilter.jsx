@@ -3,9 +3,11 @@ import KakaoMap from "./KakaoMap";
 import { durationData } from "../../../../data/durationData";
 import FilterBtnPurple from "../../../../components/FilterBtnPurple";
 import PurpleBtn from "../../../../components/PurpleBtn";
+import WhiteBtn from "../../../../components/WhiteBtn";
 import MapModal from "../../../../components/MapModal";
 
 export default function AfterSearchFilter({
+  setRecruitmentList,
   selectedLocation,
   setSelectedLocation,
   selectedDuration,
@@ -23,9 +25,19 @@ export default function AfterSearchFilter({
   const handleRemoveLocation = (location) => {
     setSelectedLocation(selectedLocation.filter((loc) => loc !== location));
   };
+  const resetFilter = () => {
+    //검색 조건 초기화
+    setSelectedLocation([]);
+    setSelectedDuration([]);
+    setRecruitmentList([]);
+  };
+
+  const search = () => {
+    //검색 수행
+  };
 
   return (
-    <div className="p-4">
+    <div className="">
       <div className="flex flex-col space-y-4">
         <div className="text-2xl py-2 font-semibold">검색 조건</div>
         <div className="grid grid-cols-2 gap-6">
@@ -89,6 +101,11 @@ export default function AfterSearchFilter({
               </div>
             </div>
           </div>
+        </div>
+        {/** 초기화, 검색 */}
+        <div className="flex gap-4 justify-center py-2">
+          <WhiteBtn title={"초기화"} action={() => resetFilter()} />
+          <PurpleBtn title={"검색"} action={() => search} />
         </div>
       </div>
       {/* 모달 실행 */}

@@ -7,17 +7,17 @@ export default function MapModal({
   center = { lat: 33.450701, lng: 126.570667 },
   marks = [], //{ position: { lat: 37.5665, lng: 126.978 }, content: "서울시청"}
 }) {
-  if (!isOpen) return null; // 모달이 닫혀있으면 렌더링하지 않음
+  if (!isOpen) return null;
 
   return (
     <div
       className="fixed inset-0 flex items-center justify-center z-50 backdrop-blur-sm animate-fadeIn"
-      onClick={onClose} // 배경 클릭 시 모달 닫기
+      onClick={onClose}
     >
       {/* 모달 박스 */}
       <div
         className="relative bg-white rounded-2xl shadow-xl p-6 w-[80%] h-[80%] flex flex-col animate-slideUp"
-        onClick={(e) => e.stopPropagation()} // 내부 클릭 시 닫히지 않도록 방지
+        onClick={(e) => e.stopPropagation()}
       >
         {/* 지도 */}
         <Map
