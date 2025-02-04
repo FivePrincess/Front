@@ -1,5 +1,5 @@
 import React from "react";
-
+import axios from "axios";
 const recruitment = {
   recruitment_id: 123,
   title: "[제주도 애월] 구옥 주택 게스트하우스",
