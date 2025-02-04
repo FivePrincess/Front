@@ -3,6 +3,8 @@ import RecruitmentCondition from "./components/RecruitmentCondition";
 import WorkCondition from "./components/WorkCondition";
 import MapSmall from "../../../components/MapSmall";
 import ImageList from "../../../components/ImageList";
+import WhiteBtn from "../../../components/WhiteBtn";
+import PurpleBtn from "../../../components/PurpleBtn";
 const recruitment = {
   recruitment_id: 123,
   title: "[제주도 애월] 구옥 주택 게스트하우스",
@@ -47,7 +49,8 @@ export default function StaffRecruitmentDetailPage() {
       <div className="bg-white flex-col p-20 rounded-lg shadow-lg mb-8">
         {/** 간략한 소개 */}
         <div className="flex justify-between w-full pb-16">
-          <div className="flex-col w-full">
+          {/* 왼쪽: 제목, 해시태그, 소개 */}
+          <div className="flex flex-col w-full">
             <div className="text-3xl font-bold">{recruitment.title}</div>
             <div className="flex gap-4 pt-4">
               {recruitment.hashtag.map((el, i) => (
@@ -61,7 +64,15 @@ export default function StaffRecruitmentDetailPage() {
             </div>
             <div className="pt-8">{recruitment.introduction}</div>
           </div>
-          <div className="bg-gray-main w-120 h-60 rounded-lg"></div>
+
+          {/* 오른쪽: 이미지 + 버튼 정렬 */}
+          <div className="flex flex-col justify-end items-end w-120 h-60">
+            <div className="bg-gray-main w-full h-full rounded-lg"></div>
+            <div className="flex gap-4 mt-4 w-full justify-center">
+              <WhiteBtn title={"문의하기"} action={() => {}} />
+              <PurpleBtn title={"지원하기"} action={() => {}} />
+            </div>
+          </div>
         </div>
         {/** 모집 조건 */}
         <div>
@@ -94,11 +105,15 @@ export default function StaffRecruitmentDetailPage() {
         />
       </div>
       {/** 근무지 사진 */}
-      <div className="bg-white flex-col p-20 rounded-lg shadow-lg h-[600px] mb-8">
+      <div className="bg-white flex-col p-20 rounded-lg shadow-lg mb-8">
         <div className="text-2xl font-semibold pb-8">근무지 사진</div>
         <ImageList images={recruitment.photos} />
       </div>
       {/** 상세 모집 내용 */}
+      <div className="bg-white flex-col p-20 rounded-lg shadow-lg">
+        <div className="text-2xl font-semibold pb-8">상세 모집 내용</div>
+        <div>{recruitment.recruitment_details}</div>
+      </div>
     </div>
   );
 }
