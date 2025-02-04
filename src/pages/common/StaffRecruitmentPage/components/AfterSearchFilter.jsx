@@ -12,6 +12,7 @@ export default function AfterSearchFilter({
   setSelectedLocation,
   selectedDuration,
   setSelectedDuration,
+  setIsSearchFilter,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const handleSelect = (duration) => {
