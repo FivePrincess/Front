@@ -5,7 +5,27 @@ import AfterSearchFilter from "./components/AfterSearchFilter";
 
 //공고 목록
 export default function StaffRecruitmentPage() {
-  const [recruitmentList, setRecruitmentList] = useState([""]);
+  const [recruitmentList, setRecruitmentList] = useState([
+    //추후 api 연결
+    {
+      guesthouse_id: 123,
+      recruitment_id: 456,
+      guesthouse_name: "스테이블 게스트하우스",
+      title: "가족같은 분위기인 게스트하우스에서 함께할 팀원 구합니다.",
+      work_duration: "1~2개월 미만",
+      average_rating: 9.1,
+      rating_count: 5456,
+    },
+    {
+      guesthouse_id: 789,
+      recruitment_id: 101,
+      guesthouse_name: "제주우하우스",
+      title: "[주말] STAFF 채용합니다.",
+      work_duration: "2~3개월 미만",
+      average_rating: 9.1,
+      rating_count: 5456,
+    },
+  ]);
   const [selectedLocation, setSelectedLocation] = useState(["서초", "대구"]); //선택한 지역
   const [selectedDuration, setSelectedDuration] = useState([]); //선택한 근무 기간
   return (
