@@ -2,6 +2,8 @@ import { useState } from "react";
 import KakaoMap from "./KakaoMap";
 import { durationData } from "../../../../data/durationData";
 import FilterBtnPurple from "../../../../components/FilterBtnPurple";
+import PurpleBtn from "../../../../components/PurpleBtn";
+import MapModal from "../../../../components/MapModal";
 
 export default function AfterSearchFilter({
   selectedLocation,
@@ -9,6 +11,7 @@ export default function AfterSearchFilter({
   selectedDuration,
   setSelectedDuration,
 }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const handleSelect = (duration) => {
     if (selectedDuration.includes(duration)) {
       setSelectedDuration(selectedDuration.filter((d) => d !== duration));
@@ -25,14 +28,26 @@ export default function AfterSearchFilter({
     <div className="p-4">
       <div className="flex flex-col space-y-4">
         <div className="text-2xl py-2 font-semibold">검색 조건</div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="w-full h-[400px]">
+        <div className="grid grid-cols-2 gap-6">
+          {/** 지도 */}
+          <div className="w-full h-full relative">
+            {/* 지도 */}
             <KakaoMap
               center={{ lat: 33.450701, lng: 126.570667 }}
               height="100%"
               width="100%"
             />
+
+            {/* 중앙 정렬된 버튼 */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+              <PurpleBtn
+                title={"지도 보기"}
+                action={() => setIsModalOpen(true)}
+              />
+            </div>
           </div>
+
+          {/** 필터링 */}
           <div className="space-y-6">
             {/* 지역 필터링 */}
             <div className="space-y-2">
@@ -76,6 +91,12 @@ export default function AfterSearchFilter({
           </div>
         </div>
       </div>
+      {/* 모달 실행 */}
+      <MapModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        center={{ lat: 33.450701, lng: 126.570667 }}
+      />
     </div>
   );
 }

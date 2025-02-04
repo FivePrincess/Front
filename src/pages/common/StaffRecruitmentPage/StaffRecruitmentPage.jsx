@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SearchFilter from "./components/SearchFilter";
 import RecruitmentList from "./components/RecruitmentList";
 import AfterSearchFilter from "./components/AfterSearchFilter";
+import Map from "../../../components/MapModal";
 
 //공고 목록
 export default function StaffRecruitmentPage() {
