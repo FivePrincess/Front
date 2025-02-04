@@ -7,14 +7,14 @@ export default function RecruitmentCondition({ recruitment }) {
         <div className="flex-col w-1/2">
           <div className="flex gap-8 text-lg font-semibold pb-4">
             <div className="text-gray-main w-20">모집 기간</div>
-            <div className="font-medium">
+            <div>
               {recruitment.recruitment_start_date} -{" "}
               {recruitment.recruitment_end_date}
             </div>
           </div>
           <div className="flex gap-8 text-lg font-semibold  pb-4">
             <div className="text-gray-main w-20">모집 인원</div>
-            <div className="flex gap-4 font-medium">
+            <div className="flex gap-4">
               {recruitment.female_number > 0 ? (
                 <div>여 {recruitment.female_number} 명</div>
               ) : (
@@ -34,7 +34,7 @@ export default function RecruitmentCondition({ recruitment }) {
           </div>
           <div className="flex gap-8 text-lg font-semibold">
             <div className="text-gray-main w-20">나이</div>
-            <div className="font-medium">
+            <div>
               {recruitment.minimum_age} - {recruitment.maximum_age} 세
             </div>
           </div>
@@ -42,13 +42,11 @@ export default function RecruitmentCondition({ recruitment }) {
         <div className="flex-col gap-4 w-1/2">
           <div className="flex gap-8 text-lg font-semibold  pb-4">
             <div className="text-gray-main w-20">입도 날짜</div>
-            <div className="font-medium">{recruitment.arrival_date}</div>
+            <div>{recruitment.arrival_date}</div>
           </div>
           <div className="flex gap-8 text-lg font-semibold  pb-4">
             <div className="text-gray-main w-20">우대 조건</div>
-            <div className="font-medium">
-              {recruitment.preferred_qualifications}
-            </div>
+            <div>{recruitment.preferred_qualifications}</div>
           </div>
         </div>
       </div>

@@ -4,7 +4,6 @@ import WhiteBtn from "../../../../components/WhiteBtn";
 import PurpleBtn from "../../../../components/PurpleBtn";
 import LocationFilter from "./LocationFilter";
 import DurationFilter from "./DurationFilter";
-import KakaoMap from "./KakaoMap";
 
 //공고 지역 필터
 export default function SearchFilter({

@@ -1,7 +1,7 @@
 import React from "react";
-import axios from "axios";
 import RecruitmentCondition from "./components/RecruitmentCondition";
 import WorkCondition from "./components/WorkCondition";
+import MapSmall from "../../../components/MapSmall";
 const recruitment = {
   recruitment_id: 123,
   title: "[제주도 애월] 구옥 주택 게스트하우스",
@@ -10,9 +10,9 @@ const recruitment = {
     "안녕하세요. 구옥 주택 게스트하우스에서 1월, 2월 함께할 거주분들을 모집합니다.",
   contact: "010-1234-5678",
   work_location: "제주시 조천읍 함덕 16길 1-4 단독주택",
+  latitude: 33.450701,
+  longitude: 126.570667,
   recruitment_details: "좋은 게스트하우스입니다. 어쩌고...",
-  created_date: "2025-01-22T12:00:00",
-  updated_date: "2025-01-23T10:00:00",
   guesthouse_id: 123,
   recruitment_conditions: {
     recruitment_start_date: "2025-01-22",
@@ -69,11 +69,28 @@ export default function StaffRecruitmentDetailPage() {
         </div>
       </div>
       {/** 근무 조건 */}
-      <div className="bg-white flex-col p-20 rounded-lg shadow-lg">
+      <div className="bg-white flex-col p-20 rounded-lg shadow-lg mb-8">
         <WorkCondition work={recruitment.employment_conditions} />
       </div>
       {/** 근무지 정보 */}
-      <div></div>
+      <div className="bg-white flex-col p-20 rounded-lg shadow-lg h-[600px]">
+        <div className="text-2xl font-semibold pb-8">근무지 정보</div>
+        <div className="font-semibold pb-4">{recruitment.work_location}</div>
+        <MapSmall
+          center={{ lat: recruitment.latitude, lng: recruitment.longitude }}
+          height="75%"
+          width="100%"
+          marks={[
+            {
+              position: {
+                lat: recruitment.latitude,
+                lng: recruitment.longitude,
+              },
+              content: recruitment.title,
+            },
+          ]}
+        />
+      </div>
       {/** 근무지 사진 */}
       <div></div>
       {/** 상세 모집 내용 */}

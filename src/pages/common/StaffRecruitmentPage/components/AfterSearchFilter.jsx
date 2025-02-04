@@ -1,5 +1,5 @@
 import { useState } from "react";
-import KakaoMap from "./KakaoMap";
+import MapSmall from "../../../../components/MapSmall";
 import { durationData } from "../../../../data/durationData";
 import FilterBtnPurple from "../../../../components/FilterBtnPurple";
 import PurpleBtn from "../../../../components/PurpleBtn";
@@ -45,7 +45,7 @@ export default function AfterSearchFilter({
           {/** 지도 */}
           <div className="w-full h-full relative">
             {/* 지도 */}
-            <KakaoMap
+            <MapSmall
               center={{ lat: 33.450701, lng: 126.570667 }}
               height="100%"
               width="100%"
