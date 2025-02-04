@@ -12,17 +12,21 @@ export default function SearchFilter({
   setSelectedLocation,
   selectedDuration,
   setSelectedDuration,
+  setIsSearchFilter,
 }) {
   const [selectedFilter, setSelectedFilter] = useState(""); //선택한 대분류
+  //검색 조건 초기화
   const resetFilter = () => {
-    //검색 조건 초기화
     setSelectedFilter("");
     setSelectedLocation([]);
     setSelectedDuration([]);
   };
-
+  //검색 수행
   const search = () => {
-    //검색 수행
+    //검색 수행 후, 검색 결과 없으면 toast로 알림
+
+    //검색 수행 후, 검색 결과가 있으면,
+    setIsSearchFilter(false);
   };
 
   return (
@@ -63,7 +67,7 @@ export default function SearchFilter({
         {/** 초기화, 검색 */}
         <div className="flex gap-4 justify-center py-2">
           <WhiteBtn title={"초기화"} action={() => resetFilter()} />
-          <PurpleBtn title={"검색"} action={() => search} />
+          <PurpleBtn title={"검색"} action={() => search()} />
         </div>
       </div>
     </div>

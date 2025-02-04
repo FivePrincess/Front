@@ -12,6 +12,7 @@ function KakaoMap({
       center={center} // center를 props로 받아와서 사용
       style={{ width: `${width}`, height: `${height}` }}
       level={10} // 확대/축소 레벨
+      draggable={false}
     >
       {marks.map((mark, index) => (
         <MapMarker key={index} position={mark.position}>
