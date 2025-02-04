@@ -9,9 +9,9 @@ export default function Layout() {
       <header>
         <Header />
       </header>
-      <main className="flex-grow min-h-screen px-32">
+      <div className="flex-grow min-h-screen px-64">
         <Outlet />
-      </main>
+      </div>
       <footer>
         <Footer />
       </footer>
