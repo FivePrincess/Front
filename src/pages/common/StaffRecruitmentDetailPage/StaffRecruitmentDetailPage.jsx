@@ -2,6 +2,7 @@ import React from "react";
 import RecruitmentCondition from "./components/RecruitmentCondition";
 import WorkCondition from "./components/WorkCondition";
 import MapSmall from "../../../components/MapSmall";
+import ImageList from "../../../components/ImageList";
 const recruitment = {
   recruitment_id: 123,
   title: "[제주도 애월] 구옥 주택 게스트하우스",
@@ -32,9 +33,10 @@ const recruitment = {
     benefits: "숙식 제공, 차량 제공, 수영장 무료 이용 제공",
   },
   photos: [
-    "https://example.com/photo1.jpg",
-    "https://example.com/photo2.jpg",
-    "https://example.com/photo3.jpg",
+    "http://www.thecaravan.co.kr/news/photo/201509/4466_1.jpg",
+    "http://www.thecaravan.co.kr/news/photo/201509/4466_1.jpg",
+    "http://www.thecaravan.co.kr/news/photo/201509/4466_1.jpg",
+    "http://www.thecaravan.co.kr/news/photo/201509/4466_1.jpg",
   ],
 };
 
@@ -73,7 +75,7 @@ export default function StaffRecruitmentDetailPage() {
         <WorkCondition work={recruitment.employment_conditions} />
       </div>
       {/** 근무지 정보 */}
-      <div className="bg-white flex-col p-20 rounded-lg shadow-lg h-[600px]">
+      <div className="bg-white flex-col p-20 rounded-lg shadow-lg h-[600px] mb-8">
         <div className="text-2xl font-semibold pb-8">근무지 정보</div>
         <div className="font-semibold pb-4">{recruitment.work_location}</div>
         <MapSmall
@@ -92,7 +94,10 @@ export default function StaffRecruitmentDetailPage() {
         />
       </div>
       {/** 근무지 사진 */}
-      <div></div>
+      <div className="bg-white flex-col p-20 rounded-lg shadow-lg h-[600px] mb-8">
+        <div className="text-2xl font-semibold pb-8">근무지 사진</div>
+        <ImageList images={recruitment.photos} />
+      </div>
       {/** 상세 모집 내용 */}
     </div>
   );
