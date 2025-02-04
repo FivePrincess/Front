@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
 import Rating from "./Rating";
+import { useNavigate } from "react-router-dom";
 
 export default function RecruitmentList({ recruitmentList }) {
+  const navigate = useNavigate();
   // 좋아요 상태를 관리하는 state
   const [list, setList] = useState(recruitmentList);
 
@@ -44,8 +46,11 @@ export default function RecruitmentList({ recruitmentList }) {
       <div>
         {list.map((recruitment, index) => (
           <div
-            key={recruitment.id}
+            key={recruitment.recruitment_id}
             className="flex gap-4 p-4 rounded-lg hover:shadow-lg duration-300"
+            onClick={() => {
+              navigate(`./${recruitment.recruitment_id}`);
+            }}
           >
             {/* 이미지 박스 (마우스 오버 시 확대) */}
             <img
