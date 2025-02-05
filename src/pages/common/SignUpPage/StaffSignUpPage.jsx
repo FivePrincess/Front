@@ -2,7 +2,7 @@ import styles from "./SignUpPage.module.css"
 import { useState } from "react";
 
 export default function StaffSignUpPage() {
-  
+
   const [selectedGender, setSelectedGender] = useState(""); // 선택한 성별 저장
 
   return (

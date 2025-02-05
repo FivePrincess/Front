@@ -1,6 +1,10 @@
 import styles from "./SelectSignUpPage.module.css"; // ✅ 변경된 import 문
+import { useNavigate } from "react-router-dom";
 
 export default function SelectSignUpPage() {
+
+  const navigate = useNavigate();
+
   return (
     <div className={styles.signupContainer}>
       <div className={styles.signupHeader}>
@@ -18,7 +22,7 @@ export default function SelectSignUpPage() {
             <h2>개인 회원</h2>
             <p>게스트하우스 일자리를 찾는 구직자</p>
 
-            <button className={`${styles.signupButton} ${styles.purple}`}>개인회원 가입하기</button>
+            <button className={`${styles.signupButton} ${styles.purple}`} onClick={() => navigate("staff")}>개인회원 가입하기</button>
           </div>
         </div>
 
@@ -32,7 +36,7 @@ export default function SelectSignUpPage() {
             <h2>게스트하우스 회원</h2>
             <p>게스트하우스 알바생을 구하는 사장님</p>
 
-            <button className={`${styles.signupButton} ${styles.yellow}`}>게스트하우스 회원 가입하기</button>
+            <button className={`${styles.signupButton} ${styles.yellow}`} onClick={() => navigate("guesthouse")}>게스트하우스 회원 가입하기</button>
           </div>
         </div>
       </div>
