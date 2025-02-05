@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", "Helvetica", "Arial", "sans-serif";
+  --font-sans: "sans-serif";
   --color-purple-dark: #4a20e1;
   --color-purple-main: #7153dd;
   --color-purple-medium: #b9abff;
