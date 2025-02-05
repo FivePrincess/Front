@@ -1,0 +1,180 @@
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 5rem;
+  margin-top: 200px;
+}
+
+/* 가운데 줄 추가 */
+.loginContainer::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 45%; /* 줄의 길이 조정 */
+  background-color: var(--color-gray-stroke); /* 연한 회색 */
+  left: 50%; /* 중앙 정렬 */
+  transform: translateX(-49%);
+}
+
+.loginLeft,
+.loginRight {
+  width: 40%;
+  /* padding: 2rem; */
+  /* align-items: center; 내부 모든 요소가 수직 중앙 정렬 */
+
+}
+
+.loginTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.loginSubtitle {
+  color: var(--color-gray-main);
+  font-weight: 600;
+  margin-bottom: 2.2rem;
+}
+
+.signupLink {
+  color: var(--color-purple-main);
+  font-weight: 750;
+}
+
+.loginTabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.tab {
+  padding: 1.3rem ;
+  width: 100%;
+  background-color: var(--color-purple-light);
+  color:var(--color-black);
+  font-weight: bold;
+  font-size: large;
+  border-bottom: 1.5px solid var(--color-black);
+}
+
+.tab.active {
+  background-color:var(--color-white);
+  border: 1.5px solid var(--color-black); 
+  border-bottom: none; /* 선택된 탭의 하단 테두리 제거 */
+}
+
+.loginForm {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.loginInput {
+  width: 280px;
+  padding: 0.8rem;
+  border: 2px solid var(--color-purple-medium);
+  border-radius: 1rem;
+  margin-bottom: 0.3rem
+}
+
+.loginButton {
+  height: 107px;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--color-purple-main);
+  color: white;
+  border-radius: 0.6rem;
+  margin-bottom: 0.3rem;
+  font-size: 17px;
+}
+
+.loginLinks {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 3rem;
+  color: var(--color-gray-main);
+  font-weight: 600;
+  cursor: pointer;
+  padding-bottom: 0.5rem; /* 밑줄과 텍스트 사이 간격 조절 */
+  border-bottom: 1px solid var(--color-gray-stroke); /* 연한 회색 밑줄 추가 */
+  width: 100%; /* 전체 너비 차지 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.socialLogin {
+  display: flex;
+  justify-content: center; /* 가로 중앙 정렬 */
+  gap: 3rem; /* 아이콘 사이 간격 줄이기 */
+  margin-top: 1rem; /* 위쪽 여백 줄이기 */
+  padding: 0.5rem 0;
+}
+
+.socialLogin img {
+  width: 45px; /* 아이콘 크기 */
+  height: 45px;
+  cursor: pointer;
+}
+
+.serviceTitle {
+  position: relative;
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 45px;
+  z-index: 1; /* 텍스트가 가상 요소보다 앞에 오도록 설정 */
+}
+
+/* 노란 박스 효과 추가 */
+.serviceTitle::before {
+  content: ""; /* 가상 요소 생성 */
+  position: absolute;
+  left: 0;
+  bottom: 0.3em; /* 텍스트보다 약간 아래 배치 */
+  width: 100%;
+  height: 1em; /* 노란색 박스 높이 */
+  background-color: var(--color-yellow-light); /* 노란색 */
+  z-index: -1; /* 텍스트 뒤로 배치 */
+}
+
+.serviceList {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.serviceItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85px;
+  height: 85px;
+  border: 1px solid var(--color-gray-main);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-right: 5px;
+}
+
+.serviceContent h3 {
+  font-size: 20px;
+  font-weight: 750;
+  margin-bottom: 8px;
+  color: var(--color-black);
+}
+
+.serviceContent p {
+  margin: 0;
+  color: var(--color-gray-main);
+  font-size: 18px;
+  line-height: 1.5;
+}
